@@ -1,0 +1,594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01-pmos/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>Remote access to HASS - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objective" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Remote access to HASS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-pmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reuse an Old Smart Phone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Remote access to HASS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Remote access to HASS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-data-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Create Data Volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Port Forwarding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-duckdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) DuckDNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Docker-compose.yaml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-start-swag" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Start SWAG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-swag-config-for-homeassistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) SWAG config for Homeassistant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ha-configyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) HA config.yaml
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-data-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Create Data Volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Port Forwarding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-duckdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) DuckDNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Docker-compose.yaml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-start-swag" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Start SWAG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-swag-config-for-homeassistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) SWAG config for Homeassistant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ha-configyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) HA config.yaml
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Remote access to HASS</h1>
+
+<h4 id="objective">Objective</h4>
+<p>Enable remote access to HomeAssistant.   </p>
+<p>Running Home assistant in a docker container, <a href="https://www.home-assistant.io/docs/configuration/remote/">remote access</a> can be a headache as the standard Hass io system add-ons are not available.</p>
+<p>There is a docker package  <a href="https://docs.linuxserver.io/images/docker-swag">SWAG</a> (Secure Web Application Gateway) that sets up an Nginx reverse proxy and a built-in certbot client that automates SSL server certificate generation and renewal processes (Let's Encrypt). It also contains fail2ban for intrusion prevention.</p>
+<p>The following are the basic steps to get it installed and working.</p>
+<h4 id="1-create-data-volume">1) Create Data Volume</h4>
+<p>Firstly, create the data volume so that you own it. SWAG will put a lot of stuff in there.</p>
+<pre><code>mkdir ~/volumes/swag
+</code></pre>
+<h4 id="2-port-forwarding">2) Port Forwarding</h4>
+<p>Forward ports 80 and 443 through your router to the ports 80 and 443 of the  homeassistant server.
+No need to forward port 8123.</p>
+<h4 id="3-duckdns">3) DuckDNS</h4>
+<p>Set up a Duckdns account. This is simple and fully explained on their <a href="https://www.duckdns.org/">web site</a>.
+Keep a record of “your-domain” and “your-access-token”.</p>
+<h4 id="4-docker-composeyaml">4) Docker-compose.yaml</h4>
+<p>Add the configuration below into your  docker-compose.yaml file.</p>
+<pre><code>version: &quot;3&quot;
+services:
+  homeassistant:
+    ...
+    ...
+
+  swag:
+    image: 'ghcr.io/linuxserver/swag:arm32v7-1.32.0'
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+  #    - DOCKER_MODS='ghcr.io/linuxserver/mods:swag-dashboard'
+      - PUID=10000
+      - PGID=10000
+      - TZ=Europe/Paris
+      - URL=50460.duckdns.org
+      - VALIDATION=duckdns
+      - DUCKDNSTOKEN=a5011e49-b4f1-47fb-9514-c96dc16bba71
+      - SUBDOMAINS=wildcard
+#      - CROWDSEC_API_KEY=c0504ad4245e5563b5f650895f874a7b
+#      - CROWDSEC_LAPI_URL=http://192.168.1.111:8080
+    volumes:
+      - /home/bryan/volumes/swag:/config
+    network_mode: host
+    restart: unless-stopped
+
+</code></pre>
+<p>Since docker creates some files as root, you will need your PUID &amp; GUID.  Use the Unix command 'id' to find these (mine were 10000).</p>
+<h4 id="5-start-swag">5) Start SWAG</h4>
+<p>Run
+ <code>docker-compose up swag</code></p>
+<p>This will down load the swag image, create the swag volume, unpack and set up the default configuration.
+It takes quite some time to generate the certificates etc</p>
+<p>If all goes well, it should end with</p>
+<pre><code>swag | Server ready.
+</code></pre>
+<p>Use <code>ctrl-c</code> to stop docker gracefully.</p>
+<h4 id="6-swag-config-for-homeassistant">6) SWAG config for Homeassistant</h4>
+<p>SWAG has pre-configured Homeassistant file that first needs to be renamed: </p>
+<pre><code>cd  ~/volumes/swag/nginx/proxy-confs
+cp homeassistant.subdomain.conf.sample homeassistant.subdomain.conf
+</code></pre>
+<p>Since Homeassistant uses the Network mode "host", docker hasn't given your machine a name, so we need to change the two lines in this file containing
+<code>set $upstream_app homeassistant;</code> to your HA address  <code>set $upstream_app 192.168.X.XXX;</code></p>
+<p>To help, this is the file (with all the comment lines removed for clarity)</p>
+<pre><code>server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name homeassistant.*;
+    include /config/nginx/ssl.conf;
+    client_max_body_size 0;
+    location / {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app 192.168.XX.XXX;
+        set $upstream_port 8123;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
+        location /api {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app 192.168.XX.XXX;
+        set $upstream_port 8123;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    }
+}
+</code></pre>
+<h4 id="7-ha-configyaml">7) HA config.yaml</h4>
+<p>Add the following to you home assistant config.yaml ( /home/user/volumes/hass/configuration.yaml).
+Adjust for your local lan network</p>
+<pre><code>http:
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.X.0/24  # Local Lan
+
+</code></pre>
+<p>8) Finally-Test it is working</p>
+<p>Launch homeassistant and swag</p>
+<p><code>docker-compose up -d</code></p>
+<p>Wait a little.</p>
+<p>Then, use your browser to logon from your local network <code>192.168.X.XXX:8123</code> and you should get your normal home assistant login.</p>
+<p>Finally, use your browser to logon from outside your home
+<span>https://</span>homeassistant.YOUR-SUB-DOMAIN.duckdns<span>.</span>org</p>
+<p>Note: unless your router supports ’ loopback’ ( and mine didn’t) you might not be able to connect; in that case use a telephone rather than your local LAN connection.</p>
+<p>That’s it. You have remote access to home assistant.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../search/main.js"></script>
+      
+    
+  </body>
+</html>
